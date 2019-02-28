@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Погода</string>
+    <string name="activity_main">Введите город..</string>
+    <string name="to_second">Запросить</string>
+    <string name="activity_second">Вторая activity</string>
+    <string name="to_back">Вернуться..</string>
+    <string name="edittextdefault">Введите город</string>
 </resources>

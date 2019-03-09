@@ -2,16 +2,12 @@ package ru.geekbrains.lifecycle;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
-
 public class LifeCycleActivity extends AppCompatActivity {
-    private static final String TAG = "MyApp";
 
     private static final String KEY = "Counter";
 
@@ -29,7 +25,7 @@ public class LifeCycleActivity extends AppCompatActivity {
             instanceState = "Повторный запуск!";
 
         Toast.makeText(getApplicationContext(), instanceState + " - onCreate()", Toast.LENGTH_SHORT).show();
-        Log.i(TAG,"onCreate");
+
         // Получить Presenter
         final LifeCyclePresenter presenter = LifeCyclePresenter.getInstance();
 
@@ -56,7 +52,6 @@ public class LifeCycleActivity extends AppCompatActivity {
 
         saveInstanceState.putInt(KEY, counter);               // Сохраняем счетчик
         Toast.makeText(getApplicationContext(), "onSaveInstanceState()", Toast.LENGTH_SHORT).show();
-        Log.i(TAG,"onSaveInstanceState()");
     }
 
     @Override
@@ -66,48 +61,41 @@ public class LifeCycleActivity extends AppCompatActivity {
         counter = saveInstanceState.getInt(KEY);              // Восстанавливаем счетчик
         Toast.makeText(getApplicationContext(), "Повторный запуск!! - onRestoreInstanceState()",
                 Toast.LENGTH_SHORT).show();
-        Log.i(TAG,"onRestoreInstanceState");
     }
 
     @Override
     protected void onStart() {
         super.onStart();
         Toast.makeText(getApplicationContext(), "onStart()", Toast.LENGTH_SHORT).show();
-        Log.i(TAG,"onStart()");
     }
 
     @Override
     protected void onResume() {
         super.onResume();
         Toast.makeText(getApplicationContext(), "onResume()", Toast.LENGTH_SHORT).show();
-        Log.i(TAG,"onResume()");
     }
 
     @Override
     protected void onPause() {
         super.onPause();
         Toast.makeText(getApplicationContext(), "onPause()", Toast.LENGTH_SHORT).show();
-        Log.i(TAG,"onResume()");
     }
 
     @Override
     protected void onStop() {
         super.onStop();
         Toast.makeText(getApplicationContext(), "onStop()", Toast.LENGTH_SHORT).show();
-        Log.i(TAG,"onStop()");
     }
 
     @Override
     protected void onRestart() {
         super.onRestart();
         Toast.makeText(getApplicationContext(), "onRestart()", Toast.LENGTH_SHORT).show();
-        Log.i(TAG,"onRestart()");
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
         Toast.makeText(getApplicationContext(), "onDestroy()", Toast.LENGTH_SHORT).show();
-        Log.i(TAG,"onDestroy()");
     }
 }

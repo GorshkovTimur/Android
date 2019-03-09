@@ -1,3 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Погода</string>
+
+    <string name="app_name">CityInfo</string>
+    <string name="empty">Список городов пуст</string>
+    <string name="view">TextView</string>
+    <string name="tempview">TextView</string>
+    <string name="pressview">TextView</string>
+    <string name="windview">TextView</string>
+
+    <string-array name="Cities">
+        <item>Москва</item>
+        <item>Санкт-Петербург</item>
+        <item>Екатеринбург</item>
+        <item>Новосибирск</item>
+        <item>Самара</item>
+    </string-array>
+
 </resources>

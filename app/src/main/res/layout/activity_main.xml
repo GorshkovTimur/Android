@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- это макет для портретной (книжной) ориентации -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
 
-    <!-- в портретной (книжной) ориентации у активити только один фрагмент -->
-    <FrameLayout
+    <Button
+        android:id="@+id/add"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:text="@string/add"
+        />
 
-        <fragment android:name="ru.geekbrains.cityinfo.CitiesFragment"
-            android:id="@+id/cities"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-    </FrameLayout>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:scrollbars="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
 </LinearLayout>

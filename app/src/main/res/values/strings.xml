@@ -7,6 +7,7 @@
     <string name="tempview">TextView</string>
     <string name="pressview">TextView</string>
     <string name="windview">TextView</string>
+    <string name="allinfo">Вся информация</string>
 
     <string-array name="Cities">
         <item>Москва</item>

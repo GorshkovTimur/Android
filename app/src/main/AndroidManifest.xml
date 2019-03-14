@@ -19,7 +19,7 @@
         </activity>
 
         <activity android:name=".CoatOfArmsActivity"/>
-
+        <activity android:name=".AllInfoActivity"/>
     </application>
 
 </manifest>

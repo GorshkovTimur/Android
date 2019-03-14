@@ -1,5 +1,6 @@
 package ru.geekbrains.cityinfo;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.content.res.TypedArray;
@@ -7,6 +8,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -59,6 +61,7 @@ public class CoatOfArmsFragment extends Fragment {
         cityWind.setText(wind.getText(parcel.getImageIndex()));
 
         cityNameView.setText(parcel.getCityName());
+
 
 
         return layout;

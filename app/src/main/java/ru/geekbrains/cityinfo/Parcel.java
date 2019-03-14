@@ -4,8 +4,8 @@ import java.io.Serializable;
 
 public class Parcel implements Serializable {
 
-    private final int imageIndex;
-    private final String cityName;
+    private int imageIndex;
+    private String cityName;
 
     public int getImageIndex() {
         return imageIndex;
@@ -19,4 +19,6 @@ public class Parcel implements Serializable {
         this.imageIndex = imageIndex;
         this.cityName = cityName;
     }
+
+
 }

@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -24,7 +25,17 @@ public class CitiesFragment extends ListFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_list, container, false);
+       View view = inflater.inflate(R.layout.fragment_list, container, false);
+        Button button = (Button) view.findViewById(R.id.button);
+                button.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(getActivity(), AllInfoActivity.class);
+                        startActivity(intent);
+                    }
+                });
+                return view;
+
     }
 
     // Активити создана, можно к ней обращаться. Выполним начальные действия
@@ -49,14 +60,14 @@ public class CitiesFragment extends ListFragment {
         if (savedInstanceState != null)
             currentParcel = (Parcel) savedInstanceState.getSerializable(KEY);
         else
-            currentParcel = new Parcel(0,
-                    getResources().getTextArray(R.array.Cities)[0].toString());
+            currentParcel = new Parcel(0, getResources().getTextArray(R.array.Cities)[0].toString());
 
         // Если можно нарисовать рядом герб, то сделаем это
         if (isExistCoatOfArms) {
             getListView().setChoiceMode(ListView.CHOICE_MODE_SINGLE);
             showCoatOfArms(currentParcel);
         }
+
     }
 
     // Сохраним текущую позицию (вызывается перед выходом из фрагмента)

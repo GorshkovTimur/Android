@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- это макет для портретной (книжной) ориентации -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
+    android:layout_height="match_parent"
+    tools:context="ru.geekbrains.cityinfo.MainActivity">
     <!-- в портретной (книжной) ориентации у активити только один фрагмент -->
     <FrameLayout
         android:layout_width="match_parent"
@@ -17,4 +19,5 @@
 
     </FrameLayout>
 
-</LinearLayout>
+
+</android.support.design.widget.CoordinatorLayout>

@@ -8,6 +8,7 @@
     <string name="pressview">TextView</string>
     <string name="windview">TextView</string>
     <string name="allinfo">Вся информация</string>
+    <string name="action_settings">О создателе</string>
 
     <string-array name="Cities">
         <item>Москва</item>

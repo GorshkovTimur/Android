@@ -9,6 +9,11 @@
     <string name="windview">TextView</string>
     <string name="allinfo">Вся информация</string>
     <string name="action_settings">О создателе</string>
+    <string name="contact_settings">Контакты</string>
+
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string-array name="Cities">
         <item>Москва</item>

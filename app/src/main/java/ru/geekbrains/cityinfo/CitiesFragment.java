@@ -34,7 +34,18 @@ public class CitiesFragment extends ListFragment {
                         startActivity(intent);
                     }
                 });
+
+        Button sensButton = (Button)view.findViewById(R.id.button_sensors);
+        sensButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(),SensorInfoActivity.class);
+                startActivity(intent);
+            }
+        });
+
                 return view;
+
 
     }
 

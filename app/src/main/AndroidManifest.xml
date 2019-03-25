@@ -20,6 +20,7 @@
 
         <activity android:name=".CoatOfArmsActivity"/>
         <activity android:name=".AllInfoActivity"/>
+        <activity android:name=".SensorInfoActivity"/>
     </application>
 
 </manifest>

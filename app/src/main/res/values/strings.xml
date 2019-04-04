@@ -14,6 +14,16 @@
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="sensors">Сенсоры</string>
+    <string name="content_title">Weather notification</string>
+    <string name="settings">Настройки</string>
+    <string name="show_temperature">Отображать температуру</string>
+    <string name="show_wind">Отображать скорость ветра</string>
+    <string name="save">Сохранить настройки</string>
+    <string name="asyns">ASyncTask</string>
+    <string name="calc">Calculation</string>
+    <string name="status">status</string>
+    <string name="custom_view">CustomView</string>
 
     <string-array name="Cities">
         <item>Москва</item>

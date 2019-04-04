@@ -27,6 +27,9 @@
         <activity android:name=".CoatOfArmsActivity"/>
         <activity android:name=".AllInfoActivity"/>
         <activity android:name=".SensorInfoActivity"/>
+        <activity android:name=".SettingActivity"/>
+        <activity android:name=".ASyncActivity"/>
+        <activity android:name=".ActivityCustomView"/>
     </application>
 
 </manifest>

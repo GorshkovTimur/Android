@@ -1,5 +1,7 @@
 package ru.geekbrains.cityinfo;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.ListFragment;
@@ -21,11 +23,17 @@ public class CitiesFragment extends ListFragment {
     private boolean isExistCoatOfArms;  // Можно ли расположить рядом фрагмент с гербом
     private Parcel currentParcel;
 
+
+    SharedPreferences mSettings;
+
+
     // При создании фрагмента укажем его макет
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-       View view = inflater.inflate(R.layout.fragment_list, container, false);
+
+
+        View view = inflater.inflate(R.layout.fragment_list, container, false);
         Button button = (Button) view.findViewById(R.id.button);
                 button.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -41,6 +49,33 @@ public class CitiesFragment extends ListFragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(),SensorInfoActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        Button settings_Button = (Button)view.findViewById(R.id.button_settings);
+        settings_Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(),SettingActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button async = (Button)view.findViewById(R.id.async);
+        async.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(),ASyncActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button cview = (Button)view.findViewById(R.id.custom_view);
+        cview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent in = new Intent(getActivity(),ActivityCustomView.class);
+                startActivity(in);
             }
         });
 

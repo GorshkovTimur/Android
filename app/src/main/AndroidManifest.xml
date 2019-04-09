@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="ru.geekbrains.cityinfo">
 
+
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,6 +11,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <service
+            android:name=".WeatherService"
+            android:enabled="true"
+            android:exported="true" >
+        </service>
 
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -20,6 +28,11 @@
 
         <activity android:name=".CoatOfArmsActivity"/>
         <activity android:name=".AllInfoActivity"/>
+        <activity android:name=".SensorInfoActivity"/>
+        <activity android:name=".SettingActivity"/>
+        <activity android:name=".ASyncActivity"/>
+        <activity android:name=".ActivityCustomView"/>
+        <activity android:name=".ActivityOpenWeather"/>
     </application>
 
 </manifest>

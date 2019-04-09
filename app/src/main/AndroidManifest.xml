@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="ru.geekbrains.cityinfo">
 
+
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -30,6 +32,7 @@
         <activity android:name=".SettingActivity"/>
         <activity android:name=".ASyncActivity"/>
         <activity android:name=".ActivityCustomView"/>
+        <activity android:name=".ActivityOpenWeather"/>
     </application>
 
 </manifest>

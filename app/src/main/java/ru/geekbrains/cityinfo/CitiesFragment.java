@@ -74,8 +74,17 @@ public class CitiesFragment extends ListFragment {
         cview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent in = new Intent(getActivity(),ActivityCustomView.class);
-                startActivity(in);
+                Intent intent = new Intent(getActivity(),ActivityCustomView.class);
+                startActivity(intent);
+            }
+        });
+
+        Button weather_search = (Button)view.findViewById(R.id.weather_search);
+        weather_search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(),ActivityOpenWeather.class);
+                startActivity(intent);
             }
         });
 

@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">SmsCollector</string>
+    <string name="send">Send..</string>
+</resources>

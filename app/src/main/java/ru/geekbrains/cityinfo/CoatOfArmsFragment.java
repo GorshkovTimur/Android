@@ -1,6 +1,8 @@
 package ru.geekbrains.cityinfo;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.content.res.TypedArray;
@@ -15,7 +17,15 @@ import android.widget.TextView;
 // Фрагмент для вывода герба
 public class CoatOfArmsFragment extends Fragment {
 
+    public static final String APP_PREFERENCES = "CitiesSettings";
+    SharedPreferences mSettings;
+
+    private final String APP_PREFERENCES_SHOWTEMP = "ShowTemperature";
+    private final String APP_PREFERENCES_SHOWWIND = "ShowWind";
+
     public static final String PARCEL = "parcel";
+    private boolean isShowTemp;
+    private boolean isShowWind;
 
     // фабричный метод, создает фрагмент и передает параметр
     public static CoatOfArmsFragment create(Parcel parcel) {
@@ -38,6 +48,11 @@ public class CoatOfArmsFragment extends Fragment {
                              Bundle savedInstanceState) {
         View layout = inflater.inflate(R.layout.fragment_coatofarm, container, false);
 
+        mSettings = getActivity().getSharedPreferences(APP_PREFERENCES,Context.MODE_PRIVATE);
+        isShowTemp = mSettings.getBoolean(APP_PREFERENCES_SHOWTEMP,true);
+        isShowWind = mSettings.getBoolean(APP_PREFERENCES_SHOWWIND,true);
+
+
         // определить какой герб надо показать (и показать его)
         ImageView coatOfArms  = layout.findViewById(R.id.imageView);
         TextView cityNameView = layout.findViewById(R.id.textView);
@@ -59,8 +74,14 @@ public class CoatOfArmsFragment extends Fragment {
         cityTemperature.setText(temperature.getText(parcel.getImageIndex()));
         cityPressure.setText(pressure.getText(parcel.getImageIndex()));
         cityWind.setText(wind.getText(parcel.getImageIndex()));
-
         cityNameView.setText(parcel.getCityName());
+
+        if(!isShowTemp){
+            cityTemperature.setVisibility(View.INVISIBLE);
+        }
+        if(!isShowWind){
+            cityWind.setVisibility(View.INVISIBLE);
+        }
 
 
 

@@ -19,6 +19,7 @@ import ru.geekbrains.cityinfo.model.WeatherRequest;
 
 public class ActivityOpenWeather extends AppCompatActivity {
 
+    private WeatherDataSource wSource;
     private OpenWeather ow;
     private TextView temp;
     private Button showTemp;
@@ -32,6 +33,8 @@ public class ActivityOpenWeather extends AppCompatActivity {
         setContentView(R.layout.activity_open_weather);
         initRetrofit();
         initGUI();
+        wSource = new WeatherDataSource(getApplicationContext());
+        wSource.open();
         showTemp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -45,6 +48,7 @@ public class ActivityOpenWeather extends AppCompatActivity {
 
     private void requestRetrofit(String s, String key) {
        final StringBuilder sb = new StringBuilder();
+       final String city = s;
     ow.loadWeather(s,key)
     .enqueue(new Callback<WeatherRequest>() {
         @Override
@@ -52,6 +56,8 @@ public class ActivityOpenWeather extends AppCompatActivity {
         if (response.body()!=null)
             sb.append("Температура ").append(Float.toString(response.body().getMain().getTemp()-K2C)).append("*C");
             temp.setText(sb.toString());
+            wSource.addWeather(city,Float.toString(response.body().getMain().getTemp()-K2C));
+            wSource.close();
         }
 
         @Override

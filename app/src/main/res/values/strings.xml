@@ -26,6 +26,7 @@
     <string name="custom_view">CustomView</string>
     <string name="weather_search">OpenWeather</string>
     <string name="getTemo">Получить данные</string>
+    <string name="getTemoBy">Get by GPS</string>
 
     <string-array name="Cities">
         <item>Москва</item>
